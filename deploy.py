@@ -10,6 +10,13 @@ columns = ['Company', 'TypeName', 'Inches', 'Ram', 'Weight', 'Width', 'Height', 
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 class Item(BaseModel):
     Company: str
